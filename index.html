@@ -14,12 +14,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0F1115;          /* Charcoal */
-      --panel:#151923;       /* Slightly lighter panel */
-      --text:#EAECEF;        /* Off-white */
-      --muted:#A7AFBD;       /* Muted text */
-      --accent:#3A86FF;      /* Electric Blue */
-      --accent-2:#7C5CFF;    /* Secondary accent (optional) */
+      --bg:#0F1115;          
+      --panel:#151923;       
+      --text:#EAECEF;        
+      --muted:#A7AFBD;       
+      --accent:#3A86FF;   
+      --accent-2:#7C5CFF;
       --ok:#10B981;
       --warn:#F59E0B;
       --danger:#EF4444;
@@ -42,7 +42,7 @@
     a{color:var(--accent); text-decoration:none}
     a:hover{text-decoration:underline}
     .container{max-width:var(--max); margin:0 auto; padding:0 20px}
-    /* Header */
+    
     header{
       position:sticky; top:0; z-index:50;
       background:rgba(15,17,21,.6); backdrop-filter: blur(10px);
@@ -61,7 +61,7 @@
     nav ul{display:flex; gap:22px; list-style:none; padding:0; margin:0}
     nav a{color:var(--text); opacity:.9}
     .menu-btn{display:none}
-    /* Hero */
+    
     .hero{padding:96px 0 72px}
     .hero-grid{
       display:grid; grid-template-columns: 1.2fr .8fr; gap:36px; align-items:center;
@@ -88,7 +88,7 @@
       padding:6px 10px; border:1px solid rgba(255,255,255,.1); border-radius:999px;
       color:var(--muted); font-size:.85rem; margin-top:16px;
     }
-    /* Sections */
+   
     section{padding:64px 0}
     .section-title{font:800 1.9rem/1.2 Poppins, Inter, sans-serif; margin:0 0 18px}
     .section-sub{color:var(--muted); margin:0 0 28px}
@@ -99,14 +99,14 @@
       box-shadow: var(--shadow);
     }
     .panel{padding:22px}
-    /* About */
+  
     .about{display:grid; gap:20px; grid-template-columns: .9fr 1.1fr}
     .about p{margin:.2rem 0}
     .kpis{display:grid; grid-template-columns: repeat(3,1fr); gap:12px}
     .kpi{padding:14px 16px}
     .kpi strong{font:700 1.1rem/1 Inter, sans-serif}
     .kpi span{display:block; color:var(--muted); font-size:.9rem; margin-top:6px}
-    /* Skills */
+    
     .skills-grid{display:grid; grid-template-columns: repeat(4,1fr); gap:12px}
     .chip{
       display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:12px;
@@ -114,7 +114,7 @@
       color:#DDE3ED; font-weight:600;
     }
     .chip svg{opacity:.9}
-    /* Projects */
+    
     .projects{display:grid; grid-template-columns: repeat(2,1fr); gap:16px}
     .project{overflow:hidden}
     .project .thumb{
@@ -130,7 +130,7 @@
       padding:4px 8px; border-radius:999px;
     }
     .actions{display:flex; gap:10px; margin-top:8px; flex-wrap:wrap}
-    /* Before/after slider */
+    
     .ba{
       position:relative; height:220px; border-radius:12px; overflow:hidden;
       border:1px solid rgba(255,255,255,.08); margin:-2px -2px 12px;
@@ -152,7 +152,7 @@
       background:var(--accent); box-shadow:0 0 0 6px rgba(58,134,255,.25);
       border:2px solid white;
     }
-    /* Testimonials */
+   
     .quotes{display:grid; grid-template-columns: repeat(2,1fr); gap:16px}
     blockquote{
       margin:0; padding:16px 18px;
@@ -160,17 +160,17 @@
       border-radius:12px; color:#DDE3ED
     }
     blockquote footer{color:var(--muted); margin-top:8px}
-    /* Contact */
+   
     .contact-list{display:grid; grid-template-columns: repeat(3,1fr); gap:12px}
     .contact-item{padding:16px; display:flex; gap:12px; align-items:center}
-    /* Footer */
+   
     footer{padding:40px 0 56px; color:var(--muted); text-align:center}
-    /* Utilities */
+   
     .row{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
     .muted{color:var(--muted)}
     .inset{padding:18px 18px 6px}
     .spacer{height:8px}
-    /* Responsive */
+   
     @media (max-width: 900px){
       .hero-grid{grid-template-columns: 1fr}
       .about{grid-template-columns: 1fr}
@@ -184,7 +184,7 @@
       .mobile-nav{display:none; padding:12px 0 16px}
       .mobile-nav a{display:block; padding:10px 0; color:var(--text)}
     }
-    /* Reveal on scroll */
+    
     [data-reveal]{opacity:0; transform: translateY(14px); transition: all .6s ease}
     [data-reveal].show{opacity:1; transform: none}
   </style>
@@ -215,7 +215,6 @@
   </header>
 
   <main>
-    <!-- Hero -->
     <section class="hero">
       <div class="container hero-grid">
         <div data-reveal>
@@ -223,15 +222,13 @@
           <h1>Sarnab Bhattacharjee</h1>
           <p class="tagline">Curious, determined student from Bangladesh exploring UI/UX and front‑end. I learn fast, build from open‑source resources, and love turning ideas into clean, modern interfaces.</p>
           <div class="cta">
-            <a class="btn" href="#work" aria-label="View my projects">
-              <!-- arrow icon -->
+            <a class="btn" href="#work" aria-label="View my projects">             
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               View my work
             </a>
             <a class="btn secondary" href="#contact">Contact me</a>
           </div>
           <span class="pill">
-            <!-- spark icon -->
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2l2.5 5.5L20 10l-5.5 2.5L12 18l-2.5-5.5L4 10l5.5-2.5L12 2z" stroke="currentColor"/></svg>
             Open to internships and junior roles
           </span>
@@ -259,13 +256,13 @@
       </div>
     </section>
 
-    <!-- Work -->
+
     <section id="work" class="container" aria-labelledby="work-title">
       <h2 id="work-title" class="section-title">Projects</h2>
       <p class="section-sub">A selection of small, focused builds and redesigns — each made from open‑source learning.</p>
 
       <div class="projects">
-        <!-- Project 1 -->
+      
         <article class="card project" data-reveal>
           <div class="thumb" role="img" aria-label="Abstract animated hero preview"></div>
           <div class="panel">
@@ -281,7 +278,7 @@
           </div>
         </article>
 
-        <!-- Project 2 -->
+      
         <article class="card project" data-reveal>
           <div class="thumb" role="img" aria-label="Gaming landing page preview" style="background-image: linear-gradient(135deg, rgba(124,92,255,.35), rgba(58,134,255,.25));"></div>
           <div class="panel">
@@ -297,7 +294,7 @@
           </div>
         </article>
 
-        <!-- Project 3 (Before/After) -->
+        
         <article class="card project" data-reveal>
           <div class="ba" aria-label="Before and after comparison slider">
             <div class="before">BEFORE</div>
@@ -319,7 +316,7 @@
           </div>
         </article>
 
-        <!-- Project 4 -->
+       
         <article class="card project" data-reveal>
           <div class="thumb" role="img" aria-label="Interactive resume preview" style="background-image: radial-gradient(400px 160px at 20% 40%, rgba(255,255,255,.12), transparent 60%), linear-gradient(135deg, rgba(58,134,255,.25), rgba(124,92,255,.2));"></div>
           <div class="panel">
@@ -337,7 +334,7 @@
       </div>
     </section>
 
-    <!-- About -->
+  
     <section id="about" class="container" aria-labelledby="about-title">
       <h2 id="about-title" class="section-title">About me</h2>
       <div class="about">
@@ -362,13 +359,13 @@
       </div>
     </section>
 
-    <!-- Skills -->
+   
     <section id="skills" class="container" aria-labelledby="skills-title">
       <h2 id="skills-title" class="section-title">Skills & tools</h2>
       <p class="section-sub">I’m a fresher — hungry to learn and ship. Here’s what I use and what I’m growing.</p>
       <div class="skills-grid">
         <div class="chip">
-          <!-- Figma icon -->
+        
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 12a4 4 0 1 1 0-8h4a4 4 0 1 1 0 8h-4z" stroke="currentColor"/></svg>
           Figma
         </div>
@@ -403,7 +400,7 @@
       </div>
     </section>
 
-    <!-- Contact -->
+    
     <section id="contact" class="container" aria-labelledby="contact-title">
       <h2 id="contact-title" class="section-title">Contact</h2>
       <p class="section-sub">Let’s build something. I reply quickly.</p>
@@ -414,11 +411,12 @@
         </div>
         <div class="card contact-item">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10" stroke="currentColor"/></svg>
-          <a href="https://github.com/your-username" target="_blank" rel="noopener">github.com/your-username</a>
+          <a href="https://anshb156.github.io/" target="_blank" rel="noopener">github.com</a>
         </div>
         <div class="card contact-item">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 4h10v16H7zM7 8h10" stroke="currentColor"/></svg>
-          <a href="https://www.linkedin.com/in/your-link" target="_blank" rel="noopener">linkedin.com/in/your-link</a>
+          <a href="https://www.linkedin.com/in/sarnab-bhattacharjee-281a3a36a/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+" target="_blank" rel="noopener">linkedin</a>
         </div>
       </div>
     </section>
@@ -429,7 +427,7 @@
   </footer>
 
   <script>
-    // Mobile menu toggle
+   
     const menuBtn = document.getElementById('menuBtn');
     const mobileNav = document.getElementById('mobileNav');
     if (menuBtn && mobileNav){
@@ -439,7 +437,7 @@
         menuBtn.setAttribute('aria-expanded', String(!open));
         mobileNav.setAttribute('aria-hidden', String(open));
       });
-      // Close on link click
+    
       mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
         mobileNav.style.display = 'none';
         menuBtn.setAttribute('aria-expanded', 'false');
@@ -447,23 +445,23 @@
       }));
     }
 
-    // Before/After slider
+    
     const slider = document.getElementById('slider');
     const clip = document.getElementById('clip');
     const updateClip = v => clip.style.clipPath = `inset(0 ${100 - v}% 0 0 round 0)`;
     if (slider && clip){ updateClip(slider.value); slider.addEventListener('input', e => updateClip(e.target.value)); }
 
-    // Reveal on scroll
+  
     const revealEls = document.querySelectorAll('[data-reveal]');
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
     }, {threshold:.15});
     revealEls.forEach(el => io.observe(el));
 
-    // Current year
+   
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Smooth anchor scrolling (for older browsers without CSS smooth)
+    
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         const id = a.getAttribute('href').slice(1);

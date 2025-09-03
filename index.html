@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Dad!</title>
+<style>
+    body {
+        margin: 0;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        font-family: 'Segoe UI', sans-serif;
+        overflow: hidden;
+        text-align: center;
+        color: white;
+    }
+    h1 {
+        font-size: 3em;
+        margin-top: 20px;
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4081, 0 0 40px #ff4081;
+        animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+        from { text-shadow: 0 0 10px #fff, 0 0 20px #ff4081; }
+        to { text-shadow: 0 0 20px #fff, 0 0 40px #ff4081; }
+    }
+    .photo-frame {
+        margin: 20px auto;
+        width: 250px;
+        height: 250px;
+        border: 8px solid white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    .photo-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .message {
+        font-size: 1.5em;
+        margin: 20px;
+        background: rgba(255,255,255,0.2);
+        padding: 15px;
+        border-radius: 10px;
+        backdrop-filter: blur(5px);
+    }
+    canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+    }
+    button {
+        background: #ff4081;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    button:hover {
+        background: #e91e63;
+    }
+</style>
+</head>
+<body>
+
+<canvas id="confetti"></canvas>
+
+<h1>🎉 Happy Birthday, Dad! 🎂</h1>
+
+<div class="photo-frame">
+    <img src="dad.jpg" alt="Dad's Photo">
+</div>
+
+<div class="message">
+    Dear Dad,<br>
+    You are my hero, my guide, and my biggest inspiration.<br>
+    Wishing you endless happiness, health, and love. ❤️
+    -Created with lots of love by Sarnab Bhattacharjee.
+</div>
+
+<button onclick="playMusic()">Play Birthday Song 🎵</button>
+
+<audio id="song" src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3"></audio>
+
+<script>
+const canvas = document.getElementById('confetti');
+const ctx = canvas.getContext('2d');
+let W = window.innerWidth;
+let H = window.innerHeight;
+canvas.width = W;
+canvas.height = H;
+const confettiCount = 150;
+const confetti = [];
+
+for (let i = 0; i < confettiCount; i++) {
+    confetti.push({
+        x: Math.random() * W,
+        y: Math.random() * H - H,
+        r: Math.random() * 6 + 4,
+        d: Math.random() * confettiCount,
+        color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+        tilt: Math.random() * 10 - 10
+    });
+}
+
+function drawConfetti() {
+    ctx.clearRect(0, 0, W, H);
+    confetti.forEach(c => {
+        ctx.beginPath();
+        ctx.fillStyle = c.color;
+        ctx.ellipse(c.x, c.y, c.r, c.r/2, Math.PI/4, 0, 2 * Math.PI);
+        ctx.fill();
+    });
+    updateConfetti();
+}
+
+function updateConfetti() {
+    confetti.forEach(c => {
+        c.y += Math.cos(c.d) + 1 + c.r/2;
+        c.x += Math.sin(c.d);
+        if (c.y > H) {
+            c.x = Math.random() * W;
+            c.y = -10;
+        }
+    });
+}
+
+setInterval(drawConfetti, 20);
+
+window.addEventListener('resize', () => {
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = W;
+    canvas.height = H;
+});
+
+function playMusic() {
+    document.getElementById('song').play();
+}
+</script>
+
+</body>
+</html>
